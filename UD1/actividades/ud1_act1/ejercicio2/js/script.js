@@ -1,41 +1,17 @@
-var jugador1 = prompt("Introduce el nombre del jugador 1: ");
-var jugador2 = prompt("Introduce el nombre del jugador 2: ");
+let jugador1 = "Jugador 1";
+let jugador2 = "Jugador 2";
 
-var movimientos = ["piedra" || "Piedra", "papel" || "Papel", "tijeras" || "Tijeras"];
+let eleccion1 = "Piedra";
+let eleccion2 = "Tijera";
 
-var eleccion1 = prompt(jugador1 + ", elige entre piedra, papel o tijeras: ");
-var eleccion2 = prompt(jugador2 + ", elige entre piedra, papel o tijeras: ");
-
-// si jugador 1 elige piedra
-if (eleccion1 === "piedra" || eleccion1 === "Piedra") {
-    if (eleccion2 === "piedra" || eleccion2 === "Piedra") {
-        alert("Empate");
-    } else if (eleccion2 === "papel" || eleccion2 === "Papel") {
-        alert("el ganador es " + jugador2);
-    } else if (eleccion2 === "tijeras" || eleccion2 === "Tijeras") {
-        alert("el ganador es " + jugador1);
-    }
-
-// si jugador 1 elige papel
-} else if (eleccion1 === "papel" || eleccion1 === "Papel") {
-    if (eleccion2 === "piedra" || eleccion2 === "Piedra") {
-        alert("el ganador es " + jugador1);
-    } else if (eleccion2 === "papel" || eleccion2 === "Papel") {
-        alert("Empate");
-    } else if (eleccion2 === "tijeras" || eleccion2 === "Tijeras") {
-        alert("el ganador es " + jugador2);
-    }
-
-    // si jugador 1 elige tijeras
-} else if (eleccion1 === "tijeras" || eleccion1 === "Tijeras") {
-    if (eleccion2 === "piedra" || eleccion2 === "Piedra") {
-        alert("el ganador es " + jugador2);
-    } else if (eleccion2 === "papel" || eleccion2 === "Papel") {
-        alert("el ganador es " + jugador1);
-    } else if (eleccion2 === "tijeras" || eleccion2 === "Tijeras") {
-        alert("Empate");
-    }
-}
-else {
-    alert("Elección no válida");
+if (eleccion1 === eleccion2) {
+    alert("Empate");
+} else if (
+    (eleccion1 === 'Piedra' && eleccion2 === 'Tijera') ||
+    (eleccion1 === 'Papel' && eleccion2 === 'Piedra') ||
+    (eleccion1 === 'Tijera' && eleccion2 === 'Papel')
+) {
+    alert(`El ganador es ${jugador1} elegio ${eleccion1}`);
+} else {
+    alert(`El ganador es ${jugador2} elegio ${eleccion2}`);
 }
