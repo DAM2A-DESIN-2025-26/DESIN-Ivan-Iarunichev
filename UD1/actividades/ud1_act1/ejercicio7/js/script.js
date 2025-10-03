@@ -34,5 +34,6 @@ function calculaImpacto(tipoAtaque, tipoDefensa, ataque, defensa) {
     return daño;
 }
 
+
 let daño = calculaImpacto(tipoAtaque, tipoDefensa, ataque, defensa);
 alert(`El daño causado es: ${daño}`);
