@@ -24,3 +24,11 @@ alert(`El usuario recomendad: ${nombreMinuscula}${apellido1Minuscula.charAt(0)}$
 alert(`Otra usuario recomendado: ${nombreMinuscula.slice(0,2)}${apellido1Minuscula.slice(0,2)}${apellido2Minuscula.slice(0,2)}`);
 
 // Contraseña separando cada letra por un numero mediante una función
+function creaPassword(nombre) {
+    let password = "";
+    for (let i = 0; i < nombre.length; i++) {
+        password += nombre[i] + i;
+    }
+    return password;
+}
+alert(creaPassword(nombre));
