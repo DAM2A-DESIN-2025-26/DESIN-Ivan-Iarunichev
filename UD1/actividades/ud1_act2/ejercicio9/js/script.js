@@ -36,9 +36,9 @@ class Progenitor extends Persona{
 
   desplazarse(puntoA, puntoB){
     if (this.tieneCoche){
-      return `${this.nombre} se desplaza en coche de ${puntoA} a ${puntoB}`;
+      return `${this.nombre} va de ${puntoA} a ${puntoB}`;
     } else {
-      return `${this.nombre} se desplaza andando de ${puntoA} a ${puntoB}`;
+      return `${this.nombre} va de ${puntoA} a ${puntoB}`;
     }
   }
 
