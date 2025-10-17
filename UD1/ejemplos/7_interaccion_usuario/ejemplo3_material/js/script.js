@@ -22,4 +22,4 @@ document.querySelector("#enlace2").addEventListener("click", e => {
 			document.querySelector("#enlace2").textContent = "Ocultar 2";
 		});
 	}
-});
+}); 
