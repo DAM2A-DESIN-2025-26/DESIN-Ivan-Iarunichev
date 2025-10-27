@@ -11,7 +11,7 @@ export class CentralMedidas {
         }
 
         if (valores.length !== 30){
-            return false;
+            return true;
         }
 
         this.#medidas.push({ ciudad, valores });
