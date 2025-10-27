@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>UD1 ACT3 - Ejercicio 2: Interacción con el Usuario</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+    <body>
+        <h1>Central de Medidas</h1>
+        
+        <div class="ciudad">
+            <label>Ciudad:</label>
+            <input type="text" id="ciudad" oninput="this.value = this.value.toUpperCase()">
+        </div>
+      
+        <div class="medidas">
+            <label>Medidas:</label>
+            <input type="text" id="medidas" placeholder="Ej: 5,6,7,8,... (30 valores)">
+        </div>
+
+        <div class="botones">
+            <input type="radio" name="modo" value="manual"> Manual
+            <input type="radio" name="modo" value="aleatorio"> Aleatorio
+        </div>
+      
+        <div>
+            <button id="guardar">Guardar</button>
+            <button id="borrar">Borrar</button>
+        </div>
+      
+        <div id="errores" style="display:none; color:red; margin-top:10px;"></div>
+      
+        <div id="tabla-medidas" style="margin-top:20px;"></div>
+        <div id="temperatura-media" style="margin-top:10px; font-weight:bold;"></div>
+      
+        <script type="module" src="js/app.js"></script>
+    </body>
+</html>

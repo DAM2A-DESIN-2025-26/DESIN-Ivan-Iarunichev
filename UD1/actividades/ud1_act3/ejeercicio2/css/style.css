@@ -1,0 +1,27 @@
+body{
+    margin: 30px;
+}
+.ciudad{
+    margin-bottom: 10px;
+}
+.medidas{
+    margin-bottom: 10px;
+}
+.botones{
+    margin-bottom: 10px;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td{
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+}
+#errores{
+  background-color: #ffdddd;
+  border: 1px solid red;
+  padding: 10px;
+  border-radius: 5px;
+}
