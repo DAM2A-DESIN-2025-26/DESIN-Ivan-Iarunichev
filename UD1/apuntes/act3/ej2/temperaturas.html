@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2 - Central de Medidas</title>
+    <link rel="stylesheet" href="css/temperatiras.css">
+</head>
+<body>
+    <h1>Ejercicio 2 - Central de Medidas</h1>
+    <form id="form-temperaturas">
+        <label>Ciudad:
+            <input type="text" id="ciudad" required>
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="tipo" value="manual" checked> Manual
+        </label>
+        <label>
+            <input type="radio" name="tipo" value="aleatorio"> Aleatorio
+        </label>
+        <br>
+        <label>Medidas:
+            <input type="text" id="medidas">
+        </label>
+        <br>
+        <button type="submit">Guardar</button>
+        <button type="button" id="borrar">Borrar ciudad</button>
+    </form>
+    <div id="errores" style="display:none; color:red;"></div>
+    <div id="tabla-medidas"></div>
+    <div id="temperatura-media"></div>
+    <script src="js/centralmedidas.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
