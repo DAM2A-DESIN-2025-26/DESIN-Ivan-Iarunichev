@@ -1,0 +1,40 @@
+1. Introducción a JavaScript
+
+Crear variables de distintos tipos (números, cadenas) y saber mostrar sus datos y tipos.
+Manipular cadenas y números en tiempo real (input de usuario).
+Simular juegos como Piedra, Papel o Tijera, usando condiciones y funciones.
+Crear funciones para cálculos básicos (e.g. suma de dígitos).
+Refactorizar código usando objetos y funciones.
+Usar arrays para cálculos como la distribución de billetes en cantidades de dinero.
+Implementar algoritmos básicos (e.g. batalla Pokémon con cálculo de daño y efectividad). ✅
+
+2. Funciones y Objetos
+
+Organizar tu proyecto en carpetas y archivos separados (js, css, img).
+Entregar el código formateado y comentado, y subirlo a GitHub/Moodle antes de la fecha límite.
+
+Crear scripts que:
+Procesan y transforman cadenas de usuario (nombres, apellidos).
+Generan nombres de usuario usando funciones anónimas y flecha.
+Calculan días para cumpleaños y el día de la semana (usando Date). ✅
+Identifican errores en arrays ordenados.
+Procesan arrays para obtener tipos (boolean, number, string, function). ✅
+Manipulan listas de países: recorrer, invertir, ordenar, añadir, eliminar elementos. ✅
+Simulan una tabla de elecciones usando arrays bidimensionales. ✅
+Definen objetos y clases como Persona, Progenitor, Sucesor y Familia. Practica con constructores, getters, setters, e herencia. ✅
+Crea objetos de libros y funciones para comprobar páginas, título, etc. ✅
+
+3. Interacción con el Usuario (Central de Medidas) ✅
+
+Implementar una clase CentralMedidas para gestionar temperaturas mensuales por ciudad.
+Métodos importantes: insertar medidas (manual o aleatoria), calcular medias por ciudad y global, eliminar ciudad, mostrar las medidas por consola o como tabla HTML.
+Validar inputs: ciudad no repetida, valores en rango permitido, medidas completas.
+Usar el localStorage para guardar y cargar la información de la clase.
+Implementar métodos para convertir la tabla de datos a JSON y desde JSON.
+
+4. Ejercicio Clase Edificio ✅
+
+Creación de una clase Edificio que almacene calle, número, código postal, plantas y propietarios (arrays bidimensionales).
+Métodos clave: agregar plantas y puertas, asignar propietarios, imprimir los propietarios por consola.
+Mensajes en la consola informando sobre creaciones y asignaciones.
+Instanciar varios objetos y probar todos los métodos.
