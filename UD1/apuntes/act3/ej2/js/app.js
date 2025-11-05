@@ -1,4 +1,4 @@
-const central = new CentralMedidas();
+    const central = new CentralMedidas();
 
 function mostrarDatos() {
     document.getElementById("tabla-medidas").innerHTML = central.toHTML();
