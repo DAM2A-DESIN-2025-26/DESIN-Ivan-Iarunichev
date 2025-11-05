@@ -6,7 +6,7 @@ var enlace = document.createElement("a");
 var parrafo = document.createElement("p");
 var texto = document.createTextNode("Soy un enlace");
 
-enlacce.setAtribute("href", "https://www.google.com");
+enlace.setAtribute("href", "https://www.google.com");
 enlace.appendChild(texto);
 
 
