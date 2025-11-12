@@ -1,8 +1,3 @@
-//npm init -y
-//npm install typescript --save-dev
-//npm install -g typescript
-//npx tsc --init
-
 export type Libro = {
     nombre: string;
     color: string;
@@ -12,4 +7,5 @@ export type Libro = {
     comprar(): void;
     forrado: boolean;
     coverURL: string;
-}
+};
+//# sourceMappingURL=Libro.d.ts.map
