@@ -1,3 +1,25 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const Clase_1 = require("./clase/Clase");
+const Alumno_1 = require("./alumno/Alumno");
+const AlumnoFP_1 = require("./alumno/AlumnoFP");
+const claseFP = new Clase_1.Clase();
+const alumno1 = new Alumno_1.Alumno("Ana", 20, 7);
+const alumno2 = new Alumno_1.Alumno("Luis", 19, 4);
+const alumnoFP1 = new AlumnoFP_1.AlumnoFP("María", 21, 8, "Informática", "Bases de Datos");
+const alumnoFP2 = new AlumnoFP_1.AlumnoFP("Juan", 22, 6, "Administración", "Gestión Empresarial");
+claseFP.addAlumno(alumno1);
+claseFP.addAlumno(alumno2);
+claseFP.addAlumno(alumnoFP1);
+claseFP.addAlumno(alumnoFP2);
+console.log("Todos los alumnos:");
+claseFP.mostrarTodos();
+console.log("Alumnos aprobados:");
+claseFP.aprobados().forEach(alumno => console.log(alumno.mostrarInfo()));
+console.log("Buscar alumno por nombre 'Ana':");
+console.log(claseFP.buscarPorNombre("Ana")?.mostrarInfo());
+console.log("Total de alumnos creados:", Clase_1.Clase.totalAlumnos());
+console.log("Recomendación especialidad AlumnoFP:");
+console.log(alumnoFP1.recomendarEspecialidad());
+console.log(alumnoFP2.recomendarEspecialidad());
 //# sourceMappingURL=alumnos_fp.js.map

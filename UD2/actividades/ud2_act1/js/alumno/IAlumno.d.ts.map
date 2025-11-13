@@ -1,0 +1,1 @@
+{"version":3,"file":"IAlumno.d.ts","sourceRoot":"","sources":["../../alumno/IAlumno.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,OAAO;IACpB,EAAE,EAAE,MAAM,CAAC;IACX,MAAM,EAAE,MAAM,CAAC;IACf,IAAI,EAAE,MAAM,CAAC;IACb,IAAI,EAAE,MAAM,CAAC;IAEb,WAAW,IAAI,MAAM,CAAC;IACtB,YAAY,IAAI,OAAO,CAAC;CAC3B"}
