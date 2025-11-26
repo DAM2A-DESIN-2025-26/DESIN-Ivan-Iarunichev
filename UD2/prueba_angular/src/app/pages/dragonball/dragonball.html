@@ -1,0 +1,10 @@
+<h1>Página de Dragonball</h1>
+
+<ul>
+  @for (personaje of personaje(); track personaje.id){
+    @if (personaje.power > 5000){
+      <li>{{personaje.name}} ({{personaje.power}})</li>
+    }
+  }
+
+</ul>
