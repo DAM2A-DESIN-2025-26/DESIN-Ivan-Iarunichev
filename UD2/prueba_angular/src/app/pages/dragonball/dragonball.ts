@@ -13,6 +13,12 @@ interface Personaje {
   styleUrl: './dragonball.scss',
 })
 export class Dragonball {
+  name = signal('Goku');
+  power = signal(1500);
+
+  pintarValores(){
+    console.log(this.name(), this.power());
+  }
   personaje = signal <Personaje[]>([
     {id: 1, name: "Goku", power: 9900},
     {id: 2, name: "Pikachu", power: 7000},
