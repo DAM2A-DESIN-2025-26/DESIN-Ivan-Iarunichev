@@ -1,0 +1,10 @@
+<h1>Página de Dragonball Super</h1>
+
+<div class="row">
+  <div class="col-12 col-md-6 mt-2">
+    <personaje-add (newPersonaje)="addPersonaje($event)"></personaje-add>
+</div>
+
+<div class="col-12 col-md-6 mt-2">
+  <personajes-list [personaje]="personaje()"></personajes-list>
+</div>
