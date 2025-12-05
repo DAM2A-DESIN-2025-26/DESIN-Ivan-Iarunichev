@@ -2,9 +2,9 @@
 
 <div class="row">
   <div class="col-12 col-md-6 mt-2">
-    <personaje-add (newPersonaje)="addPersonaje($event)"></personaje-add>
+    <personaje-add (newPersonaje)="dragonballService.addPersonaje($event)"></personaje-add>
 </div>
 
 <div class="col-12 col-md-6 mt-2">
-  <personajes-list [personaje]="personaje()"></personajes-list>
+  <personajes-list [personaje]="dragonballService.personaje()"></personajes-list>
 </div>
