@@ -6,7 +6,7 @@ import { Component, signal } from '@angular/core';
   templateUrl: './inicio.html',
   styleUrl: './inicio.scss'
 })
-export class InicioComponent {
+export class Inicio {
   visitas = signal(0);
   incrementar() { this.visitas.update(v => v + 1); }
 }

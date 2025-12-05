@@ -1,10 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "cli": {
-    "packageManager": "npm",
-    "analytics": "9d367e92-3191-42fa-bad3-7ab57b15b4ea"
-  },
   "newProjectRoot": "projects",
   "projects": {
     "portalpersonal": {
@@ -22,6 +18,9 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -32,12 +31,7 @@
             ],
             "styles": [
               "src/styles.scss"
-            ],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            ]
           },
           "configurations": {
             "production": {
@@ -75,10 +69,33 @@
           },
           "defaultConfiguration": "development"
         },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n"
+        },
         "test": {
-          "builder": "@angular/build:unit-test"
+          "builder": "@angular/build:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "src/styles.scss"
+            ]
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "012a37b4-aa7a-49a0-8417-adf743fdc2a2"
   }
 }
