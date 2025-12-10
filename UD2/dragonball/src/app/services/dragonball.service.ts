@@ -44,8 +44,11 @@ export class DragonballService {
     });
   }
 
+  cargarDetalle(id: number) {
 
-    addPersonaje(personaje: Personaje) {
+  }
+
+  addPersonaje(personaje: Personaje) {
     this.personajes.update((list) => [...list, personaje]);
   }
 }
