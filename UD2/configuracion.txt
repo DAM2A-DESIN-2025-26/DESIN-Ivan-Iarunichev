@@ -1,0 +1,9 @@
+npm init -y
+
+npm install -D typescript @types/node
+
+npx tsc --init
+
+npm install -D tsx
+
+mkdir src
