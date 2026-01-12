@@ -1,0 +1,19 @@
+.navbar{
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.navbar a{
+  text-decoration: none;
+  font-size: 15px;
+  color: rgb(253, 253, 253);
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(72, 165, 182);
+  padding: 10px 15px;
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+}
+.navbar a:hover{
+  background-color: rgb(57, 132, 145);
+}

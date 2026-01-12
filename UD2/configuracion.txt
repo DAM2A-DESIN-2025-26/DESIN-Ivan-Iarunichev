@@ -1,9 +1,33 @@
-npm init -y
+npm install -g @angular/cli
 
-npm install -D typescript @types/node
+ng serve
 
-npx tsc --init
 
-npm install -D tsx
+Crear componentes de Navbar:
+ng g c component/navbar
 
-mkdir src
+Si da error en creación de archivos: npm install / npm install tslib
+Component TS no hace falta cambiar nada, se cambia el HTML poniendo (nav, a) routerLink y routerLinkActive
+Y después se crean las rutas en app.routes.ts, creando los componentes necesarias en pages/
+
+{
+    path: 'usuario',
+    loadComponent: () => import('./pages/usuario/usuario').then(m => m.Usuario),
+},
+
+O para redirigirlo al no poner ningun enlace:
+
+{
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'usuario',
+},
+
+Después mostramos la navbar en la app, en ./src/app/app.ts simplemente añadiendo dicho componente en 
+imports: [RouterOutlet, X] y despues se importa automaticamente
+
+Además de añadir en app.html, el componente antes del <router-outlet /> pero mirar bien si esta bien
+escrito en la parte de selector: '' en smart-track-navbar.ts
+
+Importar RouterLink y RouterLinkActive en la parte de smart-track-navbar.ts
+Para cambiar el CSS general desde el componente principal en la parte de ... .css
