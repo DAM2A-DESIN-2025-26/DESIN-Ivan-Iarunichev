@@ -1,4 +1,4 @@
 <nav class="navbar">
-  <a routerLink="/usuario" routerLinkActive="active" class="usuario">Usuario</a>
-  <a routerLink="/empresa" routerLinkActive="active" class="empresa">Empresa</a>
+  <a routerLink="/usuario" routerLinkActive="top-active" [routerLinkActiveOptions]="{ exact: false }" class="usuario">Usuario</a>
+  <a routerLink="/empresa" routerLinkActive="top-active" [routerLinkActiveOptions]="{ exact: false }" class="empresa">Empresa</a>
 </nav>

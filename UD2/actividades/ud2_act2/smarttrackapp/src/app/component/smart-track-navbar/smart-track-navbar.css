@@ -17,3 +17,7 @@
 .navbar a:hover{
   background-color: rgb(57, 132, 145);
 }
+
+.navbar a.top-active{
+  background-color: rgb(57, 132, 145);
+}
