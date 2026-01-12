@@ -1,0 +1,28 @@
+.buttons{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+  align-items: flex-start;
+  width: 100px;
+}
+.buttons a{
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+}
+.buttons .lista, .buttons .anadir, .buttons .editar{
+  font-size: 15px;
+  padding: 10px 15px;
+  border-radius: 15px 0 0 15px;
+  background-color: rgb(57, 132, 145);
+  color: rgb(253, 253, 253);
+  transition: all 0.3s ease-in-out;
+}
+
+.buttons .lista:hover, .buttons .anadir:hover, .buttons .editar:hover{
+  background-color: rgb(72, 165, 182);
+}
+.buttons a.active{
+  background-color: rgb(72, 165, 182);
+}
