@@ -1,12 +1,12 @@
 .navbar{
   display: flex;
-  gap: 40px;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 .logo{
-  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
   padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .nav-links{
   display: flex;
@@ -14,17 +14,17 @@
 .nav-links{
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(57, 132, 145);
+  background-color: rgb(136, 136, 136);
   border-radius: 25px;
   transition: all 0.3s ease-in-out;
 }
 .nav-links a{
-  background-color: rgb(57, 132, 145);
+  background-color: rgb(136, 136, 136);
   padding: 10px 25px;
   border-radius: 25px;
   color: rgb(253, 253, 253);
   text-decoration: none;
 }
 .nav-links a.active{
-  background-color: rgb(72, 165, 182);
+  background-color: rgb(61, 61, 61);
 }
