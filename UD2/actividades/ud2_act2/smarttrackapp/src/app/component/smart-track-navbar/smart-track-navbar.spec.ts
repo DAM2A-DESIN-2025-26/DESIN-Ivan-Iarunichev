@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { SmartTrackNavbar } from './smart-track-navbar';
 
@@ -8,7 +9,7 @@ describe('SmartTrackNavbar', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SmartTrackNavbar]
+      imports: [SmartTrackNavbar, RouterTestingModule]
     })
     .compileComponents();
 
