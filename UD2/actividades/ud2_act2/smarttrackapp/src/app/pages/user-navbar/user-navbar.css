@@ -1,0 +1,33 @@
+.buttons{
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-left: 5%;
+  align-items: flex-start;
+  width: 100px;
+}
+.buttons a{
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+}
+.buttons .lista, .buttons .anadir, .buttons .editar{
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 20px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  margin-bottom: 8px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember",sans-serif;
+  font-size: 13px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+}
+.buttons a.active{
+  background-color: #e4e5e5;
+}

@@ -2,11 +2,10 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-usuario',
+  selector: 'app-user-navbar',
+  standalone: true,
   imports: [RouterOutlet, RouterLink, RouterLinkActive],
-  templateUrl: './usuario.html',
-  styleUrl: './usuario.css',
+  templateUrl: './user-navbar.html',
+  styleUrl: './user-navbar.css',
 })
-export class Usuario {
-
-}
+export class UserNavbar {}
