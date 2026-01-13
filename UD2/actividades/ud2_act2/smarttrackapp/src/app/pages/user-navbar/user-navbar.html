@@ -1,6 +1,6 @@
 <div class="buttons">
-    <a routerLink="lista" routerLinkActive="active" class="lista">Lista</a>
-    <a routerLink="anadir" routerLinkActive="active" class="anadir">Añadir</a>
-    <a routerLink="editar" routerLinkActive="active" class="editar">Editar</a>
+    <a routerLink="/usuario/lista" routerLinkActive="active" class="lista" (click)="onDebug('lista')">Lista</a>
+    <a routerLink="/usuario/anadir" routerLinkActive="active" class="anadir" (click)="onDebug('anadir')">Añadir</a>
+    <a routerLink="/usuario/editar" routerLinkActive="active" class="editar" (click)="onDebug('editar')">Editar</a>
 </div>
 <router-outlet></router-outlet>

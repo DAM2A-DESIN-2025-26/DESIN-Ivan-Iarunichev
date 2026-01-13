@@ -8,4 +8,9 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   templateUrl: './user-navbar.html',
   styleUrl: './user-navbar.css',
 })
-export class UserNavbar {}
+export class UserNavbar {
+  onDebug(action: string) {
+    console.log('[UserNavbar] click:', action);
+  }
+}
+

@@ -1,0 +1,85 @@
+<div class="container">
+  <form (ngSubmit)="addUser()" #userForm="ngForm">
+
+    <div class="form-group">
+      <label for="dni">DNI:</label>
+      <input
+        type="text"
+        id="dni"
+        name="dni"
+        [(ngModel)]="newUser.dni"
+        required
+        class="form-control"
+        placeholder="Ej: 12345678A">
+    </div>
+
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        [(ngModel)]="newUser.nombre"
+        required
+        class="form-control"
+        placeholder="Ej: Juan">
+    </div>
+
+    <div class="form-group">
+      <label for="apellidos">Apellidos:</label>
+      <input
+        type="text"
+        id="apellidos"
+        name="apellidos"
+        [(ngModel)]="newUser.apellidos"
+        required
+        class="form-control"
+        placeholder="Ej: García López">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="newUser.email"
+        required
+        class="form-control"
+        placeholder="Ej: juan@example.com">
+    </div>
+
+    <div class="form-group">
+      <label for="telefono">Teléfono:</label>
+      <input
+        type="tel"
+        id="telefono"
+        name="telefono"
+        [(ngModel)]="newUser.telefono"
+        required
+        class="form-control"
+        placeholder="Ej: 612345678">
+    </div>
+
+    <div class="form-group">
+      <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+      <input
+        type="date"
+        id="fechaNacimiento"
+        name="fechaNacimiento"
+        [(ngModel)]="newUser.fechaNacimiento"
+        required
+        class="form-control">
+    </div>
+
+    <div class="button-group">
+      <button type="submit" [disabled]="!userForm.valid" class="btn btn-primary">
+        Guardar
+      </button>
+      <button type="button" (click)="cancel()" class="btn btn-secondary">
+        Cancelar
+      </button>
+    </div>
+
+  </form>
+</div>
