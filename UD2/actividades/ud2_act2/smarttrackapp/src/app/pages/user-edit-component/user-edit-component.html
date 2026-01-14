@@ -1,0 +1,73 @@
+<div class="container">
+  <form #userForm="ngForm" (ngSubmit)="save()">
+    <div class="form-group">
+      <label>DNI</label>
+      <input
+        class="form-control"
+        name="dni"
+        [(ngModel)]="user.dni"
+        [disabled]="editMode"
+        placeholder="Ej. 12345678A"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Nombre</label>
+      <input
+        class="form-control"
+        name="nombre"
+        [(ngModel)]="user.nombre"
+        placeholder="Ej. Juan"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Apellidos</label>
+      <input
+        class="form-control"
+        name="apellidos"
+        [(ngModel)]="user.apellidos"
+        placeholder="Ej. García López"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input
+        class="form-control"
+        name="email"
+        [(ngModel)]="user.email"
+        type="email"
+        placeholder="Ej. juan@example.com"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Teléfono</label>
+      <input
+        class="form-control"
+        name="telefono"
+        [(ngModel)]="user.telefono"
+        placeholder="Ej. 612345678"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Fecha de Nacimiento</label>
+      <input
+        class="form-control"
+        name="fechaNacimiento"
+        [(ngModel)]="user.fechaNacimiento"
+        type="date"
+      />
+    </div>
+
+    <div class="button-group">
+      <button type="submit" class="btn btn-primary" [disabled]="!userForm.valid">Guardar</button>
+      <button type="button" class="btn btn-secondary" (click)="cancel()">Cancelar</button>
+    </div>
+  </form>
+</div>

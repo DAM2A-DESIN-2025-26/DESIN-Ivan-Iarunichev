@@ -4,7 +4,7 @@ table {
   margin-top: 30px;
   font-size: 14px;
   text-align: center;
-  font-family: "Amazon Ember",sans-serif;
+  font-family: 'Amazon Ember', sans-serif;
   border-spacing: 0;
 }
 
@@ -23,4 +23,72 @@ td {
 
 tr:hover {
   background-color: #e4e5e5;
+}
+
+tr.inactive {
+  opacity: 0.6;
+  background-color: #f9f9f9;
+}
+
+.status-active {
+  color: #28a745;
+  font-weight: 500;
+}
+
+.status-inactive {
+  color: #dc3545;
+  font-weight: 500;
+}
+
+td button {
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 1px solid #d0d0d0;
+  font-family: 'Amazon Ember', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-editar {
+  background-color: #ffffff;
+  color: #232f3e;
+  border-color: #d0d0d0;
+}
+
+.btn-editar:hover {
+  background-color: #f0f0f0;
+}
+
+.btn-deshabilitar {
+  background-color: #ffffff;
+  color: #232f3e;
+  border-color: #d0d0d0;
+}
+
+.btn-deshabilitar:hover {
+  background-color: #f0f0f0;
+}
+
+.btn-activar {
+  background-color: #28a745;
+  color: white;
+  border-color: #28a745;
+}
+
+.btn-activar:hover {
+  background-color: #218838;
+  border-color: #218838;
+}
+
+.btn-eliminar {
+  background-color: #dc3545;
+  color: white;
+  border-color: #dc3545;
+}
+
+.btn-eliminar:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
 }

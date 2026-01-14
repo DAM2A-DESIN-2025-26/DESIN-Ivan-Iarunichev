@@ -4,13 +4,31 @@
       <th>DNI</th>
       <th>Nombre</th>
       <th>Apellidos</th>
+      <th>Estado</th>
+      <th>Acciones</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let u of user">
+    <tr *ngFor="let u of user" [class.inactive]="!u.activo">
       <td>{{ u.dni }}</td>
       <td>{{ u.nombre }}</td>
       <td>{{ u.apellidos }}</td>
+      <td>
+        <span *ngIf="u.activo" class="status-active">✓ Activo</span>
+        <span *ngIf="!u.activo" class="status-inactive">✗ Inactivo</span>
+      </td>
+      <td>
+        <button class="btn-editar" (click)="editUser(u.dni)">Editar</button>
+        <button class="btn-deshabilitar" (click)="toggleUserStatus(u.dni)" *ngIf="u.activo">
+          Deshabilitar
+        </button>
+        <button class="btn-activar" (click)="toggleUserStatus(u.dni)" *ngIf="!u.activo">
+          Activar
+        </button>
+        <button class="btn-eliminar" (click)="deleteUser(u.dni)">
+          Eliminar
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>
