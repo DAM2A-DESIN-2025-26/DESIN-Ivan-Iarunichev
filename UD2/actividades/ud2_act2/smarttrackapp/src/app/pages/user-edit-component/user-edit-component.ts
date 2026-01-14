@@ -74,12 +74,7 @@ export class UserEditComponent implements OnInit {
         },
         error: () => {
           alert(
-            'ERROR: No se pudo actualizar.\n\n' +
-            'El backend no acepta peticiones PUT.\n\n' +
-            'CONSULTA CON TU PROFESOR:\n' +
-            '1. ¿Está el backend ejecutándose?\n' +
-            '2. ¿El endpoint PUT está implementado?\n' +
-            '3. ¿Hay problemas de CORS?'
+            'ERROR: No se pudo actualizar.'
           );
         },
       });
