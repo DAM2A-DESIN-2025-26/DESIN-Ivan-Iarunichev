@@ -3,13 +3,12 @@ import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-rutas',
+  selector: 'app-navbar',
   standalone: true,
   imports: [IonicModule, CommonModule],
-  templateUrl: './rutas.page.html',
-  styleUrls: ['./rutas.page.scss'],
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.scss'],
 })
-export class RutasPage {
-  tituloPagina = 'Rutas';
-  rutaDestacada = 'Ruta del Cares';
+export class NavbarComponent {
+  appName = 'AsturiasExplorer';
 }
