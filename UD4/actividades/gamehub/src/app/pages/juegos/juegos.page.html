@@ -4,20 +4,19 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content>
   <ion-list>
     <ion-item *ngFor="let juego of juegos">
       <ion-label>
         <h2>{{ juego.titulo }}</h2>
-        <p>{{ juego.plataforma }} · {{ juego.genero }} · {{ juego.precio }}€</p>
-        <p *ngIf="juego.popular">Popular</p>
+        <p>{{ juego.plataforma }} - {{ juego.genero }} - {{ juego.precio }}€</p>
       </ion-label>
 
-      <ion-button slot="end" fill="outline" (click)="verDetalle(juego)">
+      <ion-button slot="end" (click)="verDetalle(juego)">
         Ver detalle
       </ion-button>
 
-      <ion-button slot="end" (click)="vistaRapida(juego)">
+      <ion-button slot="end" color="secondary" (click)="vistaRapida(juego)">
         Vista rápida
       </ion-button>
     </ion-item>

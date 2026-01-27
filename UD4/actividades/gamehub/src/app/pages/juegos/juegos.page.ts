@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule, ModalController } from '@ionic/angular';
 import { Router, RouterModule } from '@angular/router';
-
 import { Juego, Plataforma } from '../../models/juego.model';
 import { JuegosService } from '../../services/juegos.service';
 import { GamePreviewComponent } from '../../models/game-preview/game-preview.component';
@@ -24,7 +23,6 @@ export class JuegosPage implements OnInit {
 
   ngOnInit(): void {
     this.juegos = this.juegosService.getAll();
-
     const plataforma = history.state?.plataforma as Plataforma | undefined;
     if (plataforma) {
       this.juegos = this.juegosService.getByPlataforma(plataforma);

@@ -6,33 +6,37 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     loadComponent: () =>
-      import('./pages/dashboard/dashboard.page').then(m => m.DashboardPage),
+      import('./pages/dashboard/dashboard.page').then((m) => m.DashboardPage),
     children: [
       {
         path: 'juegos',
         loadComponent: () =>
-          import('./pages/juegos/juegos.page').then(m => m.JuegosPage),
+          import('./pages/juegos/juegos.page').then((m) => m.JuegosPage),
       },
       {
         path: 'tienda',
         loadComponent: () =>
-          import('./pages/tienda/tienda.page').then(m => m.TiendaPage),
+          import('./pages/tienda/tienda.page').then((m) => m.TiendaPage),
       },
       {
         path: 'perfil',
         loadComponent: () =>
-          import('./pages/perfil/perfil.page').then(m => m.PerfilPage),
+          import('./pages/perfil/perfil.page').then((m) => m.PerfilPage),
         children: [
           { path: '', redirectTo: 'configuracion', pathMatch: 'full' },
           {
             path: 'configuracion',
             loadComponent: () =>
-              import('./pages/configuracion/configuracion.page').then(m => m.ConfiguracionPage),
+              import('./pages/configuracion/configuracion.page').then(
+                (m) => m.ConfiguracionPage,
+              ),
           },
           {
             path: 'estadisticas',
             loadComponent: () =>
-              import('./pages/estadisticas/estadisticas.page').then(m => m.EstadisticasPage),
+              import('./pages/estadisticas/estadisticas.page').then(
+                (m) => m.EstadisticasPage,
+              ),
           },
         ],
       },
@@ -42,7 +46,9 @@ export const routes: Routes = [
   {
     path: 'juego-detalle/:id',
     loadComponent: () =>
-      import('./pages/juego-detalle/juego-detalle.page').then(m => m.JuegoDetallePage),
+      import('./pages/juego-detalle/juego-detalle.page').then(
+        (m) => m.JuegoDetallePage,
+      ),
   },
 
   { path: '**', redirectTo: 'dashboard/juegos' },
