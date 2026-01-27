@@ -1,13 +1,19 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>perfil</ion-title>
+    <ion-title>Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">perfil</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <ion-segment value="configuracion">
+    <ion-segment-button [routerLink]="['/dashboard/perfil/configuracion']" value="configuracion">
+      <ion-label>Configuración</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button [routerLink]="['/dashboard/perfil/estadisticas']" value="estadisticas">
+      <ion-label>Estadísticas</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-router-outlet></ion-router-outlet>
 </ion-content>

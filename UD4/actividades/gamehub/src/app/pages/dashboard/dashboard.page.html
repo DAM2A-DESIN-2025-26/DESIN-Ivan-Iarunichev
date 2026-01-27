@@ -1,13 +1,56 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>dashboard</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-app>
+  <!-- MENÚ LATERAL -->
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>GameHub</ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">dashboard</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+    <ion-content>
+      <ion-list>
+        <ion-item routerLink="/dashboard/juegos" routerDirection="root">Juegos</ion-item>
+        <ion-item routerLink="/dashboard/tienda" routerDirection="root">Tienda</ion-item>
+        <ion-item routerLink="/dashboard/perfil" routerDirection="root">Perfil</ion-item>
+
+        <ion-item button (click)="openAboutModal()">Acerca de GameHub</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>GameHub</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <!-- TABBAR PRINCIPAL -->
+      <ion-tabs>
+        <ion-router-outlet></ion-router-outlet>
+
+        <ion-tab-bar slot="bottom">
+          <ion-tab-button tab="juegos" [routerLink]="['/dashboard/juegos']">
+            <ion-icon name="game-controller-outline"></ion-icon>
+            <ion-label>Juegos</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button tab="tienda" [routerLink]="['/dashboard/tienda']">
+            <ion-icon name="storefront-outline"></ion-icon>
+            <ion-label>Tienda</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button tab="perfil" [routerLink]="['/dashboard/perfil']">
+            <ion-icon name="person-outline"></ion-icon>
+            <ion-label>Perfil</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+    </ion-content>
+  </div>
+</ion-app>

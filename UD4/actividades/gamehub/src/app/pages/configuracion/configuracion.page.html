@@ -1,13 +1,71 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>configuracion</ion-title>
+    <ion-title>Configuración</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">configuracion</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <!-- ALERTAS -->
+  <ion-button expand="block" (click)="activarNotificaciones()">
+    Activar notificaciones
+  </ion-button>
+
+  <ion-button expand="block" fill="outline" (click)="normasDeUsoInline()">
+    Normas de uso
+  </ion-button>
+
+  <!-- ALERTA INLINE -->
+  <ion-card *ngIf="showNormasInline">
+    <ion-card-header>
+      <ion-card-title>GameHub</ion-card-title>
+      <ion-card-subtitle>Aviso</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      No compartas tu cuenta con terceros.
+    </ion-card-content>
+  </ion-card>
+
+  <!-- FORMULARIO REACTIVO -->
+  <form [formGroup]="form" (ngSubmit)="guardarPerfil()">
+    <ion-item>
+      <ion-label position="stacked">Nombre</ion-label>
+      <ion-input type="text" formControlName="nombre"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="form.controls.nombre.touched && form.controls.nombre.invalid">
+      <p *ngIf="form.controls.nombre.errors?.['required']">El nombre es obligatorio.</p>
+      <p *ngIf="form.controls.nombre.errors?.['minlength']">Mínimo 3 caracteres.</p>
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="form.controls.email.touched && form.controls.email.invalid">
+      <p *ngIf="form.controls.email.errors?.['required']">El email es obligatorio.</p>
+      <p *ngIf="form.controls.email.errors?.['email']">Formato de email inválido.</p>
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="stacked">Edad</ion-label>
+      <ion-input type="number" formControlName="edad"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="form.controls.edad.touched && form.controls.edad.invalid">
+      <p *ngIf="form.controls.edad.errors?.['min']">Edad mínima 13.</p>
+      <p *ngIf="form.controls.edad.errors?.['max']">Edad máxima 99.</p>
+    </ion-text>
+
+    <ion-item lines="none">
+      <ion-label>Notificaciones</ion-label>
+      <ion-toggle formControlName="notificaciones"></ion-toggle>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" [disabled]="form.invalid">
+      Guardar perfil
+    </ion-button>
+  </form>
+
+  <!-- NAVCONTROLLER POP -->
+  <ion-button expand="block" fill="outline" (click)="volverAPerfil()">
+    Volver a perfil
+  </ion-button>
 </ion-content>

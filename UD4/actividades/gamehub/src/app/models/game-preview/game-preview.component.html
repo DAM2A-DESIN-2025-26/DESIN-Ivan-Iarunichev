@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Vista rápida</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrar()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card *ngIf="juego">
+    <ion-card-header>
+      <ion-card-title>{{ juego.titulo }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Plataforma:</strong> {{ juego.plataforma }}</p>
+      <p><strong>Género:</strong> {{ juego.genero }}</p>
+      <p><strong>Precio:</strong> {{ juego.precio }}€</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" fill="outline" (click)="cerrar()">Cerrar modal</ion-button>
+</ion-content>

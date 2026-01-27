@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule, ModalController } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
-import { AboutGamehubModalComponent } from '../../modals/about-gamehub-modal/about-gamehub-modal.component';
+import { AboutGamehubModalComponent } from '../../models/about-gamehub-modal/about-gamehub-modal.component';
 
 @Component({
   selector: 'app-dashboard',
