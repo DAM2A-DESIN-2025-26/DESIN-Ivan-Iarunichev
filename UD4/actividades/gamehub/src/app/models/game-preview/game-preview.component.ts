@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule, ModalController } from '@ionic/angular';
-import { Juego } from '../../models/juego.model';
+import { Juego } from '../juego.model';
 
 @Component({
   selector: 'app-game-preview',
