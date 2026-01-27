@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Figuras</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-tabs>
+
+    <ion-tab-bar slot="bottom">
+
+      <ion-tab-button tab="circulo" [routerLink]="['/calamar/circulo']">
+        <ion-icon name="ellipse-outline"></ion-icon>
+        <ion-label>Círculo</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="cuadrado" [routerLink]="['/calamar/cuadrado']">
+        <ion-icon name="square-outline"></ion-icon>
+        <ion-label>Cuadrado</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="triangulo" [routerLink]="['/calamar/triangulo']">
+        <ion-icon name="triangle-outline"></ion-icon>
+        <ion-label>Triángulo</ion-label>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+
+    <!-- Aquí se dibuja la página hija seleccionada -->
+    <ion-router-outlet></ion-router-outlet>
+
+  </ion-tabs>
+</ion-content>
