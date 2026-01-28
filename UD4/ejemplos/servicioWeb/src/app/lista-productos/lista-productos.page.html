@@ -1,0 +1,13 @@
+<ion-list>
+  @for(producto of productos; track producto.id){
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img [src]="producto.thumbnail" alt="producto.name">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{producto.title}}</h2>
+        <p>{{producto.description}}</p>
+      </ion-label>
+    </ion-item>
+  }
+</ion-list>
