@@ -1,0 +1,23 @@
+<ion-app>
+  <!-- Menú lateral -->
+  <ion-menu side="start" menuId="menu1" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle auto-hide="true">
+          <ion-item routerLink="/calamar">
+            <ion-label>Calamar</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <!-- Contenido principal -->
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

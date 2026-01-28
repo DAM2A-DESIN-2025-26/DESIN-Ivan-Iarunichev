@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="menu1"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Calamar</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="onOpenModal()">Info</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-tabs>
+    <ion-router-outlet></ion-router-outlet>
+
+    <ion-tab-bar slot="bottom" color="danger">
+      <ion-tab-button tab="circulo" [routerLink]="['/calamar/circulo']">
+        <ion-icon name="ellipse-outline"></ion-icon>
+        <ion-label>Círculo</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="triangulo" [routerLink]="['/calamar/triangulo']">
+        <ion-icon name="triangle-outline"></ion-icon>
+        <ion-label>Triángulo</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="cuadrado" [routerLink]="['/calamar/cuadrado']">
+        <ion-icon name="square-outline"></ion-icon>
+        <ion-label>Cuadrado</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>
