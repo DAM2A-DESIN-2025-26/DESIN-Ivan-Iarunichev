@@ -1,0 +1,38 @@
+ion-img {
+  height: 300px;
+  object-fit: cover;
+}
+
+.time-info {
+  margin-bottom: 20px;
+
+  p {
+    margin: 5px 0;
+  }
+}
+
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--ion-color-primary);
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.additional-info {
+  p {
+    margin: 8px 0;
+  }
+}
+
+.action-buttons {
+  ion-button {
+    margin-bottom: 10px;
+  }
+}

@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { IonicModule, AlertController, ToastController } from '@ionic/angular';
 import { RecipesService } from '../../services/recipes';
 import { AuthService } from '../../services/auth';
-import { Recipes } from '../../models/recipe.model';
+import { Recipe } from '../../models/recipe.model';
 
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.page.html',
   styleUrls: ['./recipes.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule]
+  imports: [IonicModule, CommonModule, RouterLink]
 })
 export class RecipesPage implements OnInit {
   recipes = this.recipesService.recipes;
@@ -116,7 +116,7 @@ export class RecipesPage implements OnInit {
     await alert.present();
   }
 
-  async confirmDelete(event: Event, recipe: Recipes) {
+  async confirmDelete(event: Event, recipe: Recipe) {
     event.stopPropagation();
 
     const alert = await this.alertController.create({

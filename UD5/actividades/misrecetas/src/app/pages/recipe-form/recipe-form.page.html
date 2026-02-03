@@ -1,0 +1,147 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="isEditMode ? '/recipe-detail/' + recipeId : '/recipes'"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ isEditMode ? 'Editar Receta' : 'Nueva Receta' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Información Básica</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <!-- Nombre -->
+        <ion-item>
+          <ion-input
+            label="Nombre de la receta *"
+            labelPlacement="floating"
+            type="text"
+            formControlName="name"
+            placeholder="Ej: Paella Valenciana"
+          ></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="recipeForm.get('name')?.invalid && recipeForm.get('name')?.touched">
+          El nombre es requerido (mínimo 3 caracteres)
+        </ion-note>
+
+        <!-- Dificultad -->
+        <ion-item>
+          <ion-select
+            label="Dificultad *"
+            labelPlacement="floating"
+            formControlName="difficulty"
+            placeholder="Selecciona dificultad"
+          >
+            <ion-select-option value="Easy">Fácil</ion-select-option>
+            <ion-select-option value="Medium">Media</ion-select-option>
+            <ion-select-option value="Hard">Difícil</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-note color="danger" *ngIf="recipeForm.get('difficulty')?.invalid && recipeForm.get('difficulty')?.touched">
+          La dificultad es requerida
+        </ion-note>
+
+        <!-- Tiempos -->
+        <ion-item>
+          <ion-input
+            label="Tiempo de preparación (min) *"
+            labelPlacement="floating"
+            type="number"
+            formControlName="prepTimeMinutes"
+            placeholder="0"
+          ></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="recipeForm.get('prepTimeMinutes')?.invalid && recipeForm.get('prepTimeMinutes')?.touched">
+          Debe ser al menos 1 minuto
+        </ion-note>
+
+        <ion-item>
+          <ion-input
+            label="Tiempo de cocción (min) *"
+            labelPlacement="floating"
+            type="number"
+            formControlName="cookTimeMinutes"
+            placeholder="0"
+          ></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="recipeForm.get('cookTimeMinutes')?.invalid && recipeForm.get('cookTimeMinutes')?.touched">
+          Debe ser al menos 0 minutos
+        </ion-note>
+
+        <!-- Porciones -->
+        <ion-item>
+          <ion-input
+            label="Porciones"
+            labelPlacement="floating"
+            type="number"
+            formControlName="servings"
+            placeholder="4"
+          ></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Ingredientes e Instrucciones</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <!-- Ingredientes -->
+        <ion-item>
+          <ion-textarea
+            label="Ingredientes (separados por comas) *"
+            labelPlacement="floating"
+            formControlName="ingredients"
+            rows="4"
+            placeholder="Ej: 500g arroz, 1 pollo, azafrán, pimiento"
+          ></ion-textarea>
+        </ion-item>
+        <ion-note color="danger" *ngIf="recipeForm.get('ingredients')?.invalid && recipeForm.get('ingredients')?.touched">
+          Los ingredientes son requeridos
+        </ion-note>
+
+        <!-- Instrucciones -->
+        <ion-item>
+          <ion-textarea
+            label="Instrucciones (una por línea) *"
+            labelPlacement="floating"
+            formControlName="instructions"
+            rows="6"
+            placeholder="Escribe cada paso en una línea nueva"
+          ></ion-textarea>
+        </ion-item>
+        <ion-note color="danger" *ngIf="recipeForm.get('instructions')?.invalid && recipeForm.get('instructions')?.touched">
+          Las instrucciones son requeridas
+        </ion-note>
+
+        <!-- Tags -->
+        <ion-item>
+          <ion-textarea
+            label="Etiquetas (separadas por comas)"
+            labelPlacement="floating"
+            formControlName="tags"
+            rows="2"
+            placeholder="Ej: español, almuerzo, arroz"
+          ></ion-textarea>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <div class="ion-padding">
+      <ion-button
+        expand="block"
+        type="submit"
+        [disabled]="!recipeForm.valid || loading"
+      >
+        <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
+        <span *ngIf="!loading">{{ isEditMode ? 'Actualizar' : 'Guardar' }} Receta</span>
+      </ion-button>
+    </div>
+  </form>
+</ion-content>

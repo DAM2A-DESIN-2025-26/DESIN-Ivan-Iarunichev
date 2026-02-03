@@ -1,4 +1,4 @@
-export interface Recipes {
+export interface Recipe {
   id: number;
   name: string;
   ingredients: string[];
@@ -18,7 +18,7 @@ export interface Recipes {
 }
 
 export interface RecipesResponse {
-  recipes: Recipes[];
+  recipes: Recipe[];
   total: number;
   skip: number;
   limit: number;

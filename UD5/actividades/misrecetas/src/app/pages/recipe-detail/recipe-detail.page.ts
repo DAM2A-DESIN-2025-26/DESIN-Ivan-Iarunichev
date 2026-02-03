@@ -1,11 +1,9 @@
-// src/app/pages/recipe-detail/recipe-detail.page.ts
-
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IonicModule, AlertController, ToastController } from '@ionic/angular';
 import { RecipesService } from '../../services/recipes';
-import { Recipes } from '../../models/recipe.model';
+import { Recipe } from '../../models/recipe.model';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -15,7 +13,7 @@ import { Recipes } from '../../models/recipe.model';
   imports: [IonicModule, CommonModule]
 })
 export class RecipeDetailPage implements OnInit {
-  recipe: Recipes | null = null;
+  recipe: Recipe | null = null;
   loading = false;
 
   constructor(

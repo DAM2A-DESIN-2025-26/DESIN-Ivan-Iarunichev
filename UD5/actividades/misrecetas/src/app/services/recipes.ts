@@ -1,7 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
-import { Recipes, RecipesResponse, RecipeFormData } from '../models/recipe.model';
+import { Recipe, RecipesResponse, RecipeFormData } from '../models/recipe.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class RecipesService {
   private apiUrl = 'https://dummyjson.com/recipes';
 
   // Signal para mantener las recetas en memoria
-  recipes = signal<Recipes[]>([]);
+  recipes = signal<Recipe[]>([]);
 
   constructor(private http: HttpClient) {}
 
@@ -20,11 +20,11 @@ export class RecipesService {
     );
   }
 
-  getRecipeById(id: number): Observable<Recipes> {
-    return this.http.get<Recipes>(`${this.apiUrl}/${id}`);
+  getRecipeById(id: number): Observable<Recipe> {
+    return this.http.get<Recipe>(`${this.apiUrl}/${id}`);
   }
 
-  createRecipe(recipeData: RecipeFormData): Observable<Recipes> {
+  createRecipe(recipeData: RecipeFormData): Observable<Recipe> {
     // Convertir los strings de ingredientes e instrucciones a arrays
     const recipe = {
       name: recipeData.name,
@@ -44,7 +44,7 @@ export class RecipesService {
       mealType: ['Lunch']
     };
 
-    return this.http.post<Recipes>(`${this.apiUrl}/add`, recipe).pipe(
+    return this.http.post<Recipe>(`${this.apiUrl}/add`, recipe).pipe(
       tap(newRecipe => {
         const current = this.recipes();
         this.recipes.set([newRecipe, ...current]);
@@ -52,7 +52,7 @@ export class RecipesService {
     );
   }
 
-  updateRecipe(id: number, recipeData: RecipeFormData): Observable<Recipes> {
+  updateRecipe(id: number, recipeData: RecipeFormData): Observable<Recipe> {
     const recipe = {
       name: recipeData.name,
       difficulty: recipeData.difficulty,
@@ -64,7 +64,7 @@ export class RecipesService {
       tags: recipeData.tags ? recipeData.tags.split(',').map(t => t.trim()) : []
     };
 
-    return this.http.put<Recipes>(`${this.apiUrl}/${id}`, recipe).pipe(
+    return this.http.put<Recipe>(`${this.apiUrl}/${id}`, recipe).pipe(
       tap(updatedRecipe => {
         const current = this.recipes();
         const index = current.findIndex(r => r.id === id);
