@@ -1,0 +1,90 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/recipes"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalle de Receta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="loading" class="ion-padding ion-text-center">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Cargando receta...</p>
+  </div>
+
+  <div *ngIf="!loading && recipe">
+    <ion-img [src]="recipe.image" [alt]="recipe.name"></ion-img>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ recipe.name }}</ion-card-title>
+        <ion-card-subtitle>
+          <ion-badge [color]="getDifficultyColor(recipe.difficulty)">
+            {{ recipe.difficulty }}
+          </ion-badge>
+          <ion-badge color="primary" class="ion-margin-start">
+            ⏱️ {{ recipe.prepTimeMinutes + recipe.cookTimeMinutes }} min
+          </ion-badge>
+          <ion-badge color="secondary" class="ion-margin-start">
+            🍽️ {{ recipe.servings }} porciones
+          </ion-badge>
+        </ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <!-- Tiempos -->
+        <div class="time-info">
+          <p><strong>Preparación:</strong> {{ recipe.prepTimeMinutes }} min</p>
+          <p><strong>Cocción:</strong> {{ recipe.cookTimeMinutes }} min</p>
+        </div>
+
+        <!-- Ingredientes -->
+        <h3>Ingredientes</h3>
+        <ion-list>
+          <ion-item *ngFor="let ingredient of recipe.ingredients">
+            <ion-icon name="checkmark-circle-outline" slot="start" color="success"></ion-icon>
+            <ion-label>{{ ingredient }}</ion-label>
+          </ion-item>
+        </ion-list>
+
+        <!-- Instrucciones -->
+        <h3>Instrucciones</h3>
+        <ion-list>
+          <ion-item *ngFor="let instruction of recipe.instructions; let i = index">
+            <ion-label class="ion-text-wrap">
+              <strong>{{ i + 1 }}.</strong> {{ instruction }}
+            </ion-label>
+          </ion-item>
+        </ion-list>
+
+        <!-- Tags -->
+        <h3 *ngIf="recipe.tags && recipe.tags.length > 0">Etiquetas</h3>
+        <div class="tags-container">
+          <ion-chip *ngFor="let tag of recipe.tags">
+            <ion-label>{{ tag }}</ion-label>
+          </ion-chip>
+        </div>
+
+        <!-- Información adicional -->
+        <div class="additional-info ion-margin-top">
+          <p><strong>Cocina:</strong> {{ recipe.cuisine }}</p>
+          <p><strong>Calorías por porción:</strong> {{ recipe.caloriesPerServing }}</p>
+          <p><strong>Rating:</strong> ⭐ {{ recipe.rating }} ({{ recipe.reviewCount }} reseñas)</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Botones de acción -->
+    <div class="action-buttons ion-padding">
+      <ion-button expand="block" (click)="editRecipe()">
+        <ion-icon slot="start" name="create-outline"></ion-icon>
+        Editar
+      </ion-button>
+      <ion-button expand="block" color="danger" (click)="confirmDelete()">
+        <ion-icon slot="start" name="trash-outline"></ion-icon>
+        Eliminar
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

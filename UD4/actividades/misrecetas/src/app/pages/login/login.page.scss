@@ -1,0 +1,22 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+
+  ion-card {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  ion-note {
+    display: block;
+    margin-top: 20px;
+
+    p {
+      margin: 5px 0;
+      font-size: 0.9em;
+    }
+  }
+}

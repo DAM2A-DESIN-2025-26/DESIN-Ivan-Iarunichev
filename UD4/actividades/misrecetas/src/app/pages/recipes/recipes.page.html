@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Mis Recetas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="navigateToLogin()">
+        <ion-icon slot="icon-only" [name]="isLoggedIn() ? 'log-out-outline' : 'log-in-outline'"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div class="ion-padding" *ngIf="loading && recipes().length === 0">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Cargando recetas...</p>
+  </div>
+
+  <ion-list *ngIf="recipes().length > 0">
+    <ion-item
+      *ngFor="let recipe of recipes()"
+      [routerLink]="['/recipe-detail', recipe.id]"
+      button
+      detail
+    >
+      <ion-thumbnail slot="start">
+        <img [src]="recipe.image" [alt]="recipe.name" />
+      </ion-thumbnail>
+
+      <ion-label>
+        <h2>{{ recipe.name }}</h2>
+        <p>
+          <ion-badge [color]="getDifficultyColor(recipe.difficulty)">
+            {{ recipe.difficulty }}
+          </ion-badge>
+          <ion-badge color="medium" class="ion-margin-start">
+            {{ recipe.prepTimeMinutes + recipe.cookTimeMinutes }} min
+          </ion-badge>
+        </p>
+        <p *ngIf="recipe.tags && recipe.tags.length > 0">
+          <ion-chip *ngFor="let tag of recipe.tags.slice(0, 2)">
+            <ion-label>{{ tag }}</ion-label>
+          </ion-chip>
+        </p>
+      </ion-label>
+
+      <ion-button
+        slot="end"
+        fill="clear"
+        color="danger"
+        (click)="confirmDelete($event, recipe)"
+      >
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <div class="empty-state ion-text-center ion-padding" *ngIf="!loading && recipes().length === 0">
+    <ion-icon name="restaurant-outline" size="large"></ion-icon>
+    <h2>No hay recetas</h2>
+    <p>Agrega tu primera receta</p>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="navigateToCreate()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

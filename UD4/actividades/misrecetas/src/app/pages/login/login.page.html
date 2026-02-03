@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/recipes"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="login-container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Bienvenido</ion-card-title>
+        <ion-card-subtitle>Inicia sesión para gestionar recetas</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+          <ion-item>
+            <ion-input
+              label="Usuario"
+              labelPlacement="floating"
+              type="text"
+              formControlName="username"
+              placeholder="Ingresa tu usuario"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input
+              label="Contraseña"
+              labelPlacement="floating"
+              type="password"
+              formControlName="password"
+              placeholder="Ingresa tu contraseña"
+            ></ion-input>
+          </ion-item>
+
+          <ion-button
+            expand="block"
+            type="submit"
+            [disabled]="!loginForm.valid || loading"
+            class="ion-margin-top"
+          >
+            <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
+            <span *ngIf="!loading">Iniciar Sesión</span>
+          </ion-button>
+        </form>
+
+        <ion-note class="ion-margin-top ion-text-center">
+          <p><strong>Usuario de prueba:</strong></p>
+          <p>Usuario: emilys</p>
+          <p>Contraseña: emilyspass</p>
+        </ion-note>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
