@@ -1,0 +1,10 @@
+<ion-item>
+  <ion-checkbox
+    slot="start"
+    [checked]="tarea.completed"
+    (ionChange)="onCheckboxChange($event)">
+  </ion-checkbox>
+  <ion-label [class.completed]="tarea.completed">
+    {{ tarea.title }}
+  </ion-label>
+</ion-item>
