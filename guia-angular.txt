@@ -1,0 +1,52 @@
+3. Proyecto Angular base (SmartTrackApp, servicios web, etc.)
+En la carpeta ud2/actividades/ud2act2 o la que toque:
+
+# Crear app Angular
+· ng new smart-track-app
+
+# Entrar en el proyecto
+· cd smart-track-app
+
+# Lanzar servidor de desarrollo
+· ng serve -o
+
+Componentes y módulos que suelen pedir:
+
+# Crear componentes (ejemplo en SmartTrackApp)
+· ng g c components/smart-track-navbar
+· ng g c components/user-list
+· ng g c components/user-add
+· ng g c components/user-edit
+
+# Crear servicio para API usuarios
+· ng g s services/user
+
+# Si quieres un módulo propio para una feature
+· ng g m features/users --routing
+
+Routing básico (si el proyecto no trae rutas o necesitas nuevas):
+
+# Añadir un módulo de routing (si hiciera falta)
+· ng g m app-routing --flat --module=app
+
+# Crear guard para proteger rutas (para login / auth, etc.)
+· ng g guard guards/auth
+
+4. Angular: comandos típicos que usarás en todas las actividades
+Dentro de cualquier proyecto Angular (cd dentro de la app):
+
+# Crear componente
+· ng g c nombre-componente
+· ng g c pages/user-list      # con subcarpetas
+
+# Crear servicio
+· ng g s nombre-servicio
+· ng g s services/recipe
+
+# Crear módulo (opcional)
+· ng g m nombre-modulo
+· ng g m features/recetas --routing
+
+# Crear interface (útil para modelos de datos)
+· ng g interface models/usuario
+· ng g interface models/receta

@@ -1,0 +1,38 @@
+1. Instalación base (una vez en el PC)
+
+# Node (si no lo tienes)
+· node -v          # comprobar
+· npm -v
+
+# Angular CLI (global)
+· npm install -g @angular/cli
+
+# Ionic CLI (global)
+· npm install -g @ionic/cli
+
+# TypeScript (opcional global, pero útil para TS “puro”)
+· npm install -g typescript
+
+
+2. Proyectos TypeScript “puros” (UD2 ACT1 – IAlumno, AlumnoFP, etc.)
+​Dentro de la carpeta que pide el profe (ud2/actividades/ud2act1):
+
+# Inicializar proyecto Node para gestionar dependencias
+· npm init -y
+
+# Instalar TypeScript local y tipos de Node
+· npm install --save-dev typescript @types/node
+
+# Crear archivo de configuración TS
+· npx tsc --init
+
+Compilar y ejecutar:
+
+# Compilar todos los .ts según tsconfig.json
+· npx tsc
+
+# O compilar un archivo concreto
+· npx tsc alumnosfp.ts
+
+# Ejecutar JS generado
+· node dist/alumnosfp.js   # o la ruta que hayas configurado

@@ -1,0 +1,98 @@
+5. Proyecto Ionic + Angular (AsturiasExplorer, MisRecetas, Tareas…)
+5.1. Crear proyecto Ionic (Angular standalone “Blank”)
+​
+# Crear proyecto Ionic Angular (blank)
+· ionic start AsturiasExplorer blank --type=angular --no-capacitor
+
+cd AsturiasExplorer
+
+# Lanzar app en navegador
+· ionic serve
+
+
+Páginas para AsturiasExplorer (inicio, rutas, gastro):
+
+· ionic generate page pages/inicio
+· ionic generate page pages/rutas
+· ionic generate page pages/gastro
+
+
+Componentes comunes (Navbar, Header, Main, Footer):
+
+· ionic generate component components/navbar
+· ionic generate component components/header
+· ionic generate component components/main
+· ionic generate component components/footer
+
+
+5.2. Proyecto Ionic para MisRecetas (CRUD DummyJSON)
+​
+# Crear proyecto (por ejemplo, tabs)
+· ionic start misrecetas tabs --type=angular --no-capacitor
+· cd misrecetas
+· ionic serve
+
+Servicios y modelos:
+
+# Servicio para recetas
+· ionic generate service services/recipes
+
+# Servicio para auth/login
+· ionic generate service services/auth
+
+# Interfaces / modelos
+· ng g interface models/recipe
+· ng g interface models/login-response
+
+Páginas típicas:
+
+# Listado de recetas
+· ionic generate page pages/recipes-list
+
+# Detalle de receta
+· ionic generate page pages/recipe-detail
+
+# Formulario crear / editar receta
+· ionic generate page pages/recipe-form
+
+# Login
+· ionic generate page pages/login
+
+Guard para proteger rutas (solo crear recetas si estás logueado):
+
+· ng g guard guards/auth
+
+5.3. Proyecto Ionic para Tareas (jsonplaceholder)
+​
+# Proyecto nuevo
+· ionic start tareas blank --type=angular --no-capacitor
+· cd tareas
+· ionic serve
+
+Servicio y componentes:
+
+# Servicio para tareas
+· ionic generate service services/servicestareas
+
+# Interface Tarea
+· ng g interface models/tarea
+
+# Componentes
+· ionic generate page pages/tareas-list   # listado
+· ionic generate component components/tarea-item  # hijo con checkbox
+
+
+6. Angular + Ionic: HTTP, routing, formularios
+Dentro de la app (Angular o Ionic) necesitarás importar módulos, pero de comandos solo:
+
+# Crear módulo de routing separado si lo necesitas
+· ng g m app-routing --flat --module=app
+
+# Crear módulo para recetas con routing propio
+· ng g m features/recipes --routing
+
+# Crear guard
+· ng g guard guards/auth
+
+# (Si no existiera) crear módulo para formularios reactivos
+# *Los módulos en sí los importas a mano, no hay comando específico más allá de ng g m
