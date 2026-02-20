@@ -1,0 +1,51 @@
+<!-- src/app/pages/item-form/item-form.page.html -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ editMode ? 'Editar item' : 'Nuevo item' }}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard/items"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)="guardar()">
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input formControlName="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Difficulty</ion-label>
+      <ion-select formControlName="difficulty">
+        <ion-select-option value="easy">Fácil</ion-select-option>
+        <ion-select-option value="medium">Media</ion-select-option>
+        <ion-select-option value="hard">Difícil</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Prep (min)</ion-label>
+      <ion-input type="number" formControlName="prepTimeMinutes"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Cook (min)</ion-label>
+      <ion-input type="number" formControlName="cookTimeMinutes"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Ingredientes</ion-label>
+      <ion-textarea formControlName="ingredients"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Instrucciones</ion-label>
+      <ion-textarea formControlName="instructions"></ion-textarea>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" [disabled]="form.invalid">
+      Guardar
+    </ion-button>
+  </form>
+</ion-content>

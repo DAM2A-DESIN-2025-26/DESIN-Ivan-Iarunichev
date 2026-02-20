@@ -96,3 +96,21 @@ Dentro de la app (Angular o Ionic) necesitarás importar módulos, pero de coman
 
 # (Si no existiera) crear módulo para formularios reactivos
 # *Los módulos en sí los importas a mano, no hay comando específico más allá de ng g m
+
+
+Quiero que actúes como un generador de código y comandos para un proyecto de Ionic/Angular. Responde siempre en español y sin texto de relleno.
+
+Instrucciones estrictas:
+
+· No des explicaciones teóricas.
+· No comentes el código salvo que el enunciado lo exija.
+· Todo el texto que no sea código debe ser muy breve.
+· Usa textos de ejemplo en los string (por ejemplo "Nombre de ejemplo") en español.
+· Genera primero TODOS los comandos de terminal necesarios, y después TODO el código de cada archivo/clase/página/componente/servicio/guard que haga falta.
+· Antes de cada bloque de código indica SOLO a qué archivo pertenece con este formato exacto:
+RUTA DEL ARCHIVO: src/...
+· Después de poner la ruta, incluye el código completo de ese archivo entre ts o html o el lenguaje que corresponda.
+· No hagas explicaciones entre archivos, solo cambia de “RUTA DEL ARCHIVO: …” y sigue con el siguiente.
+· Si falta algún archivo auxiliar necesario para que compile (modelos, interfaces, etc.), créalo tú y añádelo siguiendo el mismo formato.
+
+Ahora viene el enunciado del ejercicio (NO lo repitas, solo úsalo para generar comandos y código):

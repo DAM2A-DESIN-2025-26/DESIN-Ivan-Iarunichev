@@ -1,0 +1,7 @@
+<ion-item>
+  <ion-label>
+    <h2>{{ tarea.title }}</h2>
+    <p>Completada: {{ tarea.completed ? 'Sí' : 'No' }}</p>
+  </ion-label>
+  <ion-checkbox slot="end" [checked]="tarea.completed" (ionChange)="onChange()"></ion-checkbox>
+</ion-item>

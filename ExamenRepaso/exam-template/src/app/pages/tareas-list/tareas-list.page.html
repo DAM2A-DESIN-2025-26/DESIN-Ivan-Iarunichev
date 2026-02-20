@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Tareas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-tarea-item
+    *ngFor="let t of tareas()"
+    [tarea]="t"
+    (toggle)="onToggle($event)">
+  </app-tarea-item>
+</ion-content>

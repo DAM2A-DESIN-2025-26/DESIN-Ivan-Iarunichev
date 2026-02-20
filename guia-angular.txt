@@ -50,3 +50,20 @@ Dentro de cualquier proyecto Angular (cd dentro de la app):
 # Crear interface (útil para modelos de datos)
 · ng g interface models/usuario
 · ng g interface models/receta
+
+Quiero que generes SOLO comandos y código para un proyecto Ionic/Angular, todo en español y sin explicaciones.
+
+Reglas:
+
+· No des teoría ni comentarios en el código.
+· El texto que no sea código debe ser mínimo.
+· Usa textos de ejemplo en los string (por ejemplo "Nombre de ejemplo") en español.
+· Primero pon TODOS los comandos de terminal.
+· Después, todo el código necesario archivo por archivo.
+· Antes de cada bloque de código escribe:
+RUTA DEL ARCHIVO: src/...
+· Luego el código completo de ese archivo entre ts o html según corresponda.
+· No expliques nada entre archivos, solo cambia de “RUTA DEL ARCHIVO: …” y sigue.
+· Si falta algún archivo auxiliar (modelo, servicio, etc.), créalo tú con el mismo formato.
+
+Ahora viene el enunciado del ejercicio (NO lo repitas):
