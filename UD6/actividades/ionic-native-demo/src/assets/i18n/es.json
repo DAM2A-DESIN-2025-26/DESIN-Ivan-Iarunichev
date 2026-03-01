@@ -1,0 +1,32 @@
+{
+  "MENU": {
+    "GEOLOCALIZACION": "Geolocalización",
+    "CAMARA": "Cámara",
+    "NOTIFICACIONES": "Notificaciones",
+    "IDIOMA": "Idioma"
+  },
+  "GEO": {
+    "TITLE": "Geolocalización",
+    "BTN": "Obtener posición",
+    "LAT": "Latitud",
+    "LON": "Longitud"
+  },
+  "CAM": {
+    "TITLE": "Cámara",
+    "BTN": "Hacer foto"
+  },
+  "NOTIF": {
+    "TITLE": "Notificaciones",
+    "BTN": "Enviar notificación",
+    "NOTIF_TITLE": "¡Notificación de prueba!",
+    "NOTIF_BODY": "Notificación enviada desde la app."
+  },
+  "LANG": {
+    "TITLE": "Idioma",
+    "CURRENT": "Idioma actual",
+    "ES": "Español",
+    "EN": "Inglés",
+    "SELECTED_ES": "Tienes seleccionado el idioma: Español",
+    "SELECTED_EN": "Tienes seleccionado el idioma: Inglés"
+  }
+}

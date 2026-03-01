@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ 'CAM.TITLE' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+  <ion-button expand="block" (click)="hacerFoto()">
+    <ion-icon slot="start" name="camera-outline"></ion-icon>
+    {{ 'CAM.BTN' | translate }}
+  </ion-button>
+
+  <ion-img
+    *ngIf="fotoUrl"
+    [src]="fotoUrl"
+    style="margin-top: 20px; border-radius: 12px;">
+  </ion-img>
+</ion-content>

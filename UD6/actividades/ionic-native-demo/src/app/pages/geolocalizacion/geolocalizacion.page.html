@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ 'GEO.TITLE' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-button expand="block" (click)="obtenerPosicion()">
+    <ion-icon slot="start" name="location-outline"></ion-icon>
+    {{ 'GEO.BTN' | translate }}
+  </ion-button>
+
+  <ion-card *ngIf="lat !== null" class="ion-margin-top">
+    <ion-card-content>
+      <p><strong>{{ 'GEO.LAT' | translate }}:</strong> {{ lat }}</p>
+      <p><strong>{{ 'GEO.LON' | translate }}:</strong> {{ lon }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-text color="danger" *ngIf="error">
+    <p>{{ error }}</p>
+  </ion-text>
+
+  <div
+    id="map"
+    *ngIf="lat !== null"
+    style="
+      height: 350px;
+      width: 100%;
+      margin-top: 16px;
+      border-radius: 12px;
+      z-index: 0;
+    "
+  ></div>
+</ion-content>
